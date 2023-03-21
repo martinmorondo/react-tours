@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Loading from './Loading';
 
 const url = 'https://course-api.com/react-tours-project';
 
@@ -27,7 +28,28 @@ function App() {
     fetchTours();
   }, []);
 
-  
+  if (loading) {
+    return (
+      <main>
+        <Loading />
+      </main>
+    )
+  }
+
+  if (tours.length === 0) {
+    return (
+      <main>
+        <div className='title'>
+          <h2>No tours left</h2>
+          <button className='btn' onClick={() => fetchTours()}>
+            Refresh
+          </button>
+        </div>
+      </main>
+    )
+  }
+
+
 
   return (
     
