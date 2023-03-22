@@ -6,7 +6,7 @@ const Tour = ({ id, image, info, name, price, removeTour }) => {
 
 
     return (
-        <article>
+        <article className='single-tour'>
             <img src = {image} alt = {name} />
             <footer>
 
