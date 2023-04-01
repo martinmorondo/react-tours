@@ -19,9 +19,9 @@ const Tour = ({ id, images, image, info, name, price, removeTour }) => {
     return (
         <article className='single-tour'>
              <Slider {...settings}>
-        {images.map((image, id) => (
-          <div key={id}>
-            <img src={image} alt={name} />
+                {images.map((image, id) => (
+                    <div key={id} className='slider'>
+                    <img src={image} alt={name} />
           </div>
         ))}
       </Slider>
